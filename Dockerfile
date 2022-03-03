@@ -7,3 +7,6 @@ RUN apt-get update  && apt install -y \
                         libncurses5
 
 WORKDIR /test            
+COPY * .
+RUN cmake
+COPY . ./
