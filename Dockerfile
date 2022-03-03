@@ -8,8 +8,6 @@ RUN apt-get update  && apt install -y \
 RUN pwd
 RUN ls -ltr
 RUN find . -name "docker-test"
-WORKDIR /myapp
-WORKDIR /build
 
-RUN cmake ../
+RUN cmake .
 RUN ./example
