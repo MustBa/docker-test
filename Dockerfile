@@ -1,12 +1,10 @@
-FROM ubuntu:18.04 AS build-env
+FROM ubuntu:18.04
 
-USER root
 RUN apt-get update  && apt install -y \
                         cmake\
                         build-essential\
-                        libncurses5
+                        libncurses5 \
+                        vim 
 
 WORKDIR /test            
-COPY * ./
-RUN cmake
-COPY . ./
+COPY * .

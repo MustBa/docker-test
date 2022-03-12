@@ -1,20 +1,30 @@
 pipeline {
-    agent any
+    agent none
 
     stages {
         stage('Docker Build') {
             agent {
-                dockerfile {
-                    filename 'Dockerfile'
-                    args ''
-                    reuseNode true
-                }
+                label 'docker-agent2' 
+                reuseNode true
             }
+
+            steps {
+                sh ''' #!bin/sh
+                pwd
+                ls -ltr
+                mkdir build && cd build
+                cmake ..
+                make -j2
+                ./example
+                '''
+            }
+
+            
         }
 
         steps {
             echo "$HOME"
-            echo "Hello docker test"
+            
         }
     }
 }
