@@ -7,4 +7,4 @@ RUN apt-get update  && apt install -y \
                         vim 
 
 WORKDIR /test            
-COPY * .
+COPY * ./
