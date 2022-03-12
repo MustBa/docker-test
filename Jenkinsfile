@@ -20,7 +20,7 @@ pipeline {
                 cmake ..
                 make -j2
                 ./example
-                ls -ltr
+                ls
                 '''
             }
 
