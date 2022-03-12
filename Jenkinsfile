@@ -4,8 +4,12 @@ pipeline {
     stages {
         stage('Docker Build') {
             agent {
-                label 'docker-agent2' 
-                reuseNode true
+                dockerfile {
+                    filename 'Dockerfile'
+                    args ''
+                    label 'docker-agent2'
+                    reuseNode true
+                }
             }
 
             steps {
@@ -16,6 +20,7 @@ pipeline {
                 cmake ..
                 make -j2
                 ./example
+                ls -ltr
                 '''
             }
 
