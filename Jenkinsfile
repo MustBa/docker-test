@@ -7,7 +7,7 @@ pipeline {
                 dockerfile {
                     filename 'Dockerfile'
                     args '--privileged '
-                    label 'docker-agent2'
+                    label 'docker-agent3'
                     reuseNode true
                 }
             }
