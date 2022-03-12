@@ -26,10 +26,5 @@ pipeline {
 
             
         }
-
-        steps {
-            echo "$HOME"
-            
-        }
     }
 }
